@@ -16,8 +16,8 @@
     <context:annotation-config/>
     <context:component-scan base-package="nl.marktplaats" />
 
-    <camel:camelContext id="defaultCamelContext">
-        <camel:contextScan />
+    <camel:camelContext id="defaultCamelContext" autoStartup="false">
+        <!-- <camel:routeBuilder ref="camelRouteConfig" /> -->
     </camel:camelContext>
 
     <!-- A connection to ActiveMQ -->

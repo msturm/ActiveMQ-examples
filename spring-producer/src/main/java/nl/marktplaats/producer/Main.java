@@ -8,13 +8,13 @@ public class Main {
 
     public static void main(String... args) throws Exception {
         System.out.println("Starting Spring producer...");
-        brokerContext = new ClassPathXmlApplicationContext("jmsBroker.xml"); 
+        //brokerContext = new ClassPathXmlApplicationContext("jmsBroker.xml"); 
         applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         
         Producer producer = applicationContext.getBean(Producer.class);
         int x = 0;
         while(true) {
-            Thread.sleep(2000);
+            //Thread.sleep(1000);
             producer.produceMessage(x);
             x++;
         }

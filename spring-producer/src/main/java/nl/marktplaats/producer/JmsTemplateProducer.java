@@ -15,7 +15,7 @@ public class JmsTemplateProducer implements Producer {
     @Override
     public void produceMessage(int x) {
         System.out.println("Send message " + x + " from " + Thread.currentThread().getName());
-        jmsTemplate.convertAndSend("Testqueue", "Hello Spring world " + x + " from " + Thread.currentThread().getName());
+        jmsTemplate.convertAndSend("Hello " + x + " world from " + Thread.currentThread().getName());
 //        jmsTemplate.convertAndSend(new MessageData(x));
     }
 }

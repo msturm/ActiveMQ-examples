@@ -22,13 +22,13 @@
     </bean>
 
     <!-- A destination in ActiveMQ -->
-    <bean id="helloworldQueueService" class="org.apache.activemq.command.ActiveMQQueue">
-        <constructor-arg value="Testqueue"/>
+    <bean id="helloworldTopicService" class="org.apache.activemq.command.ActiveMQTopic">
+        <constructor-arg value="VirtualTopic.pocReindex"/>
     </bean>
 
     <!-- A JmsTemplate instance that uses the cached connection and destination -->
     <bean id="helloworldQueueProducer" class="org.springframework.jms.core.JmsTemplate">
         <property name="connectionFactory" ref="amqConnectionFactory"/>
-        <property name="defaultDestination" ref="helloworldQueueService"/>
+        <property name="defaultDestination" ref="helloworldTopicService"/>
     </bean>
 </beans>
